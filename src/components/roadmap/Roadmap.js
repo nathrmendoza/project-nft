@@ -7,6 +7,7 @@ const Roadmap = () => {
 
     const [data, setData] = useState([
         {
+            id: 0,
             year: '2020',
             shown: true,
             milestones: [
@@ -20,6 +21,7 @@ const Roadmap = () => {
             ]
         },
         {
+            id: 1,
             year: '2021',
             shown: false,
             milestones: [
@@ -35,24 +37,59 @@ const Roadmap = () => {
                     title: 'Accomplishment',
                     desc: 'Description of accomplishment',
                     half: '2nd half',
-                    finished: false
+                    finished: true
                 }
             ]
-        }
+        },
+        {
+            id: 2,
+            year: '2022',
+            shown: true,
+            milestones: [
+                {
+                    id: 0,
+                    title: 'TEST',
+                    desc: 'Description of accomplishment',
+                    year: '1st half',
+                    finished: false
+                },
+            ]
+        },
+        {
+            id: 3,
+            year: '2023',
+            shown: true,
+            milestones: [
+                {
+                    id: 0,
+                    title: 'TEST',
+                    desc: 'Description of accomplishment',
+                    year: '1st half',
+                    finished: false
+                },
+            ]
+        },
     ]);
 
     const navClick = (e, yr) => {
         e.preventDefault();
+
         let temp = data;
-        temp.map(x=>{
+        temp.forEach(x=>{
             x.shown=false;
             if (x.year === yr) {
                 x.shown=true;
             }
         });
         setData([...temp]);
+
+        //remove active class
+        let nav = document.querySelector('.rmap-nav.active');
+        nav.classList.remove('active');
+        e.target.parentElement.classList.add('active');
     }
 
+    const items = [];
     return (
         <section className='sec-roadmap'>
             <div className='primary-wrapper'>
@@ -65,36 +102,35 @@ const Roadmap = () => {
                     <div className='roadmap-navi'>
                         {
                             data.map((e,i)=>{
-                                let checkfin = false;
+                                let checkfin = true;
                                 e.milestones.forEach(m => {
-                                    console.log(m.finished);
-                                    console.log(checkfin);
-                                    if (m.finshed === true) {
-                                        checkfin = true;
-                                        console.log(checkfin);
+                                    if (m.finished === false) {
+                                        checkfin = false;
                                     }
                                 });
                                 return (
-                                    <RoadmapNavDot key={i} hasfin={checkfin} year={e.year} action={navClick}/>
+                                    <RoadmapNavDot key={i} iter={i} hasfin={checkfin} year={e.year} action={navClick}/>
                                 )
                             }) 
                         }
                     </div>
-                        {data.map(e=>{
+                    {
+                        data.forEach((e)=>{
                             if (e.shown === true) {
-                                return (
-                                    <div className='roadmap-content'>
-                                        {e.milestones.map(e=><RoadmapItem {...e} key={e.id}/>)}
-                                    </div>
-                                )
+                                e.milestones.forEach((m,i)=>{
+                                    items.push(<RoadmapItem key={i} {...m} />);
+                                });
                             }
-                            return null;
-                        })}
+                        })
+                    } 
+                    <div className='roadmap-content'>
+                    {items}
+                    </div>
                 </div>
             </div>
         </section>
     )
-} 
+}
 
 
 export default Roadmap
