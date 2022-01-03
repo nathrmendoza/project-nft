@@ -1,0 +1,80 @@
+.sec-about-us {
+    width: 100%;
+    position: relative;
+    padding: 30px 0;
+    margin: 120px 0;
+    .primary-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .left-col {
+            width: 50%;
+            padding-right: 71px;
+            h3 {
+                margin-bottom: 16px;
+            }
+        }
+        .right-col {
+            width: 50%;
+            padding-left: 71px;
+            .showcase {
+                position: relative;
+                 width: 387px;
+                 height: 387px;
+                .showcase-item {
+                    position: absolute;
+                    display: inline-block;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    transition: all 0.4s ease-out;
+                    .avatar {
+                        box-shadow: 5px 5px 10px rgba(0,0,0,0.25);
+                        img {
+                            width: 258px;
+                            height: 258px;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            z-index: 5;
+                            transition: background-color 0.4s ease-out;
+                        }
+                    }
+                    &.frw {
+                        opacity: 0;
+                        transition-duration: 0.2s!important;
+                        transform: translate(-224px, -36px)!important;
+                    }
+                    &.fir {
+                        transform: translate(-194px, -66px);
+                        z-index: 3;
+                        .avatar:after {
+                            background: rgba(0,0,0,0);
+                        }
+                    }
+                    &.sec {
+                        z-index: 2;
+                        .avatar:after {
+                            background: rgba(0,0,0,0.15);
+                        }
+                    }
+                    &.thi {
+                        transform: translate(-66px, -194px)!important;
+                        z-index: 1;
+                        .avatar:after {
+                            background: rgba(0,0,0,0.35);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

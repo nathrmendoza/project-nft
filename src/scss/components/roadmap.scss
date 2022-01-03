@@ -1,0 +1,52 @@
+.sec-roadmap {
+    width: 100%;
+    position: relative;
+    padding: 30px 0;
+    margin: 120px 0;
+    .roadmap-navi {
+        width: 100%;
+        position: relative;
+        .rmap-nav {
+            position: relative;
+            display: inline-block;
+            margin-left: 86px;
+            &:first-child {
+                margin-left: 0;
+            }
+            &:before {
+                content: '';
+                width: 86px;
+                height: 5px;
+                background: white;
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translate(100%, -50%);
+                pointer-events: none;
+            }
+            .circle {
+                width: 30px;
+                height: 30px;
+                background: white;
+                border-radius: 50%;display: inline-block;
+                cursor: pointer;
+            }
+            .date-popup {
+                position: absolute;
+                top: -10px;
+                left: 50%;
+                transform: translate(-50%, -100%);
+                width: 64px;
+                padding: 8px;
+                text-align: center;
+                background: white;
+                border-radius: 4px;
+                color: black;
+                font-family: $sansfont;
+                font-weight: 700;
+                display: none;
+            }
+        }
+    }
+}
