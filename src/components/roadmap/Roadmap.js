@@ -44,7 +44,7 @@ const Roadmap = () => {
         {
             id: 2,
             year: '2022',
-            shown: true,
+            shown: false,
             milestones: [
                 {
                     id: 0,
@@ -58,7 +58,7 @@ const Roadmap = () => {
         {
             id: 3,
             year: '2023',
-            shown: true,
+            shown: false,
             milestones: [
                 {
                     id: 0,
