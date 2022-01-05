@@ -4,6 +4,7 @@ import './scss/main.scss';
 //components
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Hero from './components/Hero';
 import About from './components/about/About';
 import Gallery from './components/gallery/Gallery';
 import Team from './components/theteam/Team';
@@ -22,6 +23,7 @@ function App() {
       <Header/>
 
       {/* main components */}
+      <Hero />
       <About />
       <Gallery />
       <Team/>

@@ -1,0 +1,38 @@
+.hero-parallax {
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    .layers_holder {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: relative;
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .parallax-outer {
+            width: 100%;
+            height: auto;
+            &:first-child {
+                position: relative!important;
+            }
+        }
+        .react-parallax  {
+            height: 100%;
+            width: 100%;
+            position: absolute!important;
+            top: 0;
+            left: 0;
+            &.disabled {
+                position: relative!important;
+                img {
+                    width: 100%;
+                    height: auto!important;
+                    position: relative!important;
+                }
+            }
+        }
+    }
+}
