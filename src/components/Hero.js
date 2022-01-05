@@ -22,43 +22,43 @@ const layers = [
     {
         src : layer2,
         parallaxed: true,
-        strength: 100,
+        strength: 0,
         disabled: false
     },
     {
         src : layer3,
         parallaxed: false,
-        strength: 200,
+        strength: 50,
         disabled: false
     },
     {
         src : layer4,
         parallaxed: false,
-        strength: 200,
+        strength: 100,
         disabled: false
     },
     {
         src : layer5,
         parallaxed: false,
-        strength: 200,
+        strength: 100,
         disabled: false
     },
     {
         src : layer6,
         parallaxed: false,
-        strength: 300,
+        strength: 150,
         disabled: false
     },
     {
         src : layer7,
         parallaxed: false,
-        strength: 400,
+        strength: 250,
         disabled: false
     },
     {
         src : layer8,
         parallaxed: false,
-        strength: 500,
+        strength: 300,
         disabled: false
     },
 ];
